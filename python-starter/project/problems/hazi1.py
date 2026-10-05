@@ -52,10 +52,10 @@ class Hazi1(Problem):
                 current_state = transitions[(current_state, char)]
 
             if is_accepted and current_state in accept_states:
-                results.append((word, "IGEN"))
+                results.append("IGEN")
             else:
-                results.append((word, "NEM"))
+                results.append("NEM")
 
         with open(output_file, 'w', encoding='utf-8') as f:
-            for word, res in results:
-                f.write(f"{word:<20}{res}\n")
+            for res in results:
+                f.write(f"{res}\n")
